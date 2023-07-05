@@ -1,0 +1,35 @@
+.holder {
+    padding: 10px 5px;
+}
+
+.education-bubble-holder {
+    padding: 10px 20px;
+    display: flex;
+    height: fit-content;
+    flex-wrap: wrap;
+}
+
+.course-title-holder {
+    display: flex;
+    align-items: center;
+}
+
+.course-title {
+    font-size: 14px;
+    text-align: left;
+    margin: 10px;
+}
+
+.education-bubble {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 100%;
+    background-color: #6b6a74a5;
+}
+
+.education-bubble.filled {
+    background-color: green;
+}
+

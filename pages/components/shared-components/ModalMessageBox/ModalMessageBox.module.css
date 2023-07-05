@@ -1,0 +1,54 @@
+.holder {
+    overflow-y: auto;
+    max-height: 100%;
+    scrollbar-width: none;
+}
+
+.inner-window {
+    background-color: rgb(199, 218, 233);
+    width: 90%;
+    height: 95%;
+    margin: auto auto;
+    scrollbar-width: thin;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 5px 2px;
+    font-size: 13px;
+    margin: 7px 5px;
+    border-radius: 15px;
+    background: #e0e0e0;
+    animation: glow 4s ease-in-out forwards
+}
+
+@keyframes glow {
+    0% {
+        background-color: #e0e0e0;
+    }
+
+    25% {
+        background-color: #e8dd08;
+    }
+
+    50% {
+        background-color: #e0e0e0;
+    }
+
+    75% {
+        background-color: #e8dd08;
+    }
+
+    100% {
+        background-color: #e0e0e0;
+    }
+
+}
+
+
+
+.message-text {
+    margin: 0;
+    color: black;
+    margin-left: 0px;
+}

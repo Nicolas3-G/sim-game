@@ -1,0 +1,82 @@
+.exit {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: .3;
+}
+
+.exit:hover {
+    transform: scale(1.1);
+    opacity: .6;
+}
+
+.food-modal {
+        width: 400px;
+        z-index: 4;
+        position: absolute;
+        background: #2b2a33;
+        background-image: url(/backgrounds/food-bg.png);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        left: 50%;
+        height: fit-content;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+}
+
+.food-modal-title {
+    font-size: 22px;
+    margin: 5px 0px;
+}
+
+.inner-window {
+    height: fit-content;
+    width: 85%;
+    background-color: #2d2c2f91;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+.selection-window {
+    width: 100%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.selection-option {
+    border: 2px solid #171718;
+    background: #2b2a33;
+    color: rgba(255, 255, 255, 0.334);
+    display: flex;
+    height: 40px;
+    align-items: center;
+    padding: 5px;
+}
+
+.selection-option img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.selection-option:hover { 
+    color: white;
+}
+
+.character-section {
+    display: grid;
+    height: 150px;
+    grid-template-columns: 50% 50%;
+}
+
+.character-image {
+    width: 100px;
+    height: 150px;
+    margin: 0px auto;
+}

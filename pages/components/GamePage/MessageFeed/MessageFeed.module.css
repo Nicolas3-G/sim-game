@@ -1,0 +1,61 @@
+.modal {
+    width: 190px;
+    height: 190px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: none;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: rgb(193, 211, 244);
+}
+
+.inner-window {
+    background-color: rgb(199, 218, 233);
+    width: 90%;
+    height: 95%;
+    margin: auto auto;
+    scrollbar-width: thin;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 5px 2px;
+    font-size: 13px;
+    margin: 7px 5px;
+    border-radius: 15px;
+    background: #e0e0e0;
+    animation: glow 4s ease-in-out forwards
+}
+
+@keyframes glow {
+    0% {
+        background-color: #e0e0e0;
+    }
+
+    25% {
+        background-color: #e8dd08;
+    }
+
+    50% {
+        background-color: #e0e0e0;
+    }
+
+    75% {
+        background-color: #e8dd08;
+    }
+
+    100% {
+        background-color: #e0e0e0;
+    }
+
+}
+
+
+
+.message-text {
+    margin: 0;
+    margin-left: 15px;
+}

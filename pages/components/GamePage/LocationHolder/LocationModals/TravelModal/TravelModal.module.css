@@ -1,0 +1,29 @@
+.modal {
+    width: 400px;
+    z-index: 4;
+    position: absolute;
+    height: 250px;
+    background: #2b2a33;
+    border: 2px solid black;
+    border-radius: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+}
+
+.cancel-button {
+    padding: 5px 15px;
+    border: none;
+    margin: 30px;
+    border-radius: 10px;
+    background-color: red;
+}
+
+.travel-button {
+    padding: 5px 15px;
+    border: none;
+    margin: 30px;
+    border-radius: 10px;
+    background-color: green;
+}

@@ -1,0 +1,65 @@
+.exit {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: .3;
+}
+
+.exit:hover {
+    transform: scale(1.1);
+    opacity: .6;
+}
+
+.food-modal {
+        width: 400px;
+        z-index: 4;
+        position: absolute;
+        height: 250px;
+        background: #2b2a33;
+        background-image: url(/backgrounds/food-bg.png);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+}
+
+.food-modal-title {
+    font-size: 22px;
+    margin: 5px 0px;
+}
+
+.selection-window {
+    background-color: #2d2c2f91;
+    height: 75%;
+    width: 85%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.selection-option {
+    border: 2px solid #171718;
+    background: #2b2a33;
+    color: rgba(255, 255, 255, 0.334);
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.selection-option img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.selection-option:hover {
+    
+    color: white;
+}

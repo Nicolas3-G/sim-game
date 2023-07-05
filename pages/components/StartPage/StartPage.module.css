@@ -1,0 +1,24 @@
+.start-button {
+    background-color: green;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+}
+
+.holder {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60px;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.page {
+    position: relative;
+    height: 100%;
+    background-image: url(/background.png);
+}

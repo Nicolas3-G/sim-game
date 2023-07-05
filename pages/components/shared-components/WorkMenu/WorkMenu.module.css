@@ -1,0 +1,48 @@
+.holder {
+    height: 85px;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 0 3px;
+    background-color: #2d2c2fea;
+    
+}
+
+.inner-holder {
+    display: flex;
+    align-items: center;
+}
+
+.work-button {
+    margin-left: 20px;
+    background-color: rgb(71, 159, 71);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.work-menu-text-holder {
+    font-size: 12px;
+    text-align: left;
+}
+
+.work-menu-text-holder p {
+    margin: 5px 0;
+;
+}
+
+
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.stat-holder {
+    display: flex;
+    align-items: center;
+    margin: 0 7px;
+}

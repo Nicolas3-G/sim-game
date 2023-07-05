@@ -30,6 +30,8 @@
     height: 50px;
     width: 50px;
     font-weight: bold;
+    display: grid;
+    place-content: center;
 }
 
 .location-button:hover {
@@ -189,5 +191,10 @@
     100% {
         transform: translateY(var(--random-position-y));
     }
+}
+
+.location-icon {
+    width: 35px;
+    height: 35px;
 }
 

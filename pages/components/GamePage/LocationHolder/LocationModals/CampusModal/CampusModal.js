@@ -24,7 +24,7 @@ const CampusModal = ({ handleWorkEnergyOut, gameData, setGameData, setCurrentDay
             <button className={styles.exit} onClick={handleCloseModal}><img src="exit-icon.svg" /></button>
             <div className={styles["inner-window"]}>
                 <div className={styles["character-section"]}>
-                    <img className={styles["character-image"]} src="characters/mall-npc.png" />
+                    <img className={styles["character-image"]} src="characters/campus-npc.png" />
                     <div style={{ maxHeight: "100%", overflow: "hidden" }}>
                         <ModalMessageBox modalMessageList={messageList} />
                     </div>

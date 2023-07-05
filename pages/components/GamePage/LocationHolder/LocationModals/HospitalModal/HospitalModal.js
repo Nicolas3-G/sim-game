@@ -51,14 +51,14 @@ const HospitalModal = ({ handleWorkEnergyOut, gameData, setGameData, setCurrentD
             <button className={styles.exit} onClick={handleCloseModal}><img src="exit-icon.svg" /></button>
             <div className={styles["inner-window"]}>
                 <div className={styles["character-section"]}>
-                    <img className={styles["character-image"]} src="characters/mall-npc.png" />
+                    <img className={styles["character-image"]} src="characters/hospital-npc.png" />
                     <div style={{maxHeight: "100%", overflow: "hidden"}}>
                         <ModalMessageBox modalMessageList={messageList} />
                     </div>
                 </div>
                 <div className={styles["selection-window"]}>
-                    <button onClick={handleSelectionClick} value="bandage" className={styles["selection-option"]}><img src="items/food/ramen.png" />Buy Bandage $60</button>
-                    <button onClick={handleSelectionClick} value="urgentCare" className={styles["selection-option"]}><img src="items/food/burger.png" />Visit Urgent Care $150</button>
+                    <button onClick={handleSelectionClick} value="bandage" className={styles["selection-option"]}><img src="items/medical/bandage.png" />Buy Bandage $60</button>
+                    <button onClick={handleSelectionClick} value="urgentCare" className={styles["selection-option"]}><img src="items/medical/needle.png" />Visit Urgent Care $150</button>
                 </div>
                 {/* Checks if player has job, then if the job is at this location */}
                 {gameData.job && gameData.job.location == gameData.location && <WorkMenu handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} addModalMessage={addModalMessage} /> }

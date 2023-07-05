@@ -81,10 +81,10 @@ const WorkModal = ({ addSystemMessage, gameData, setGameData, handleCloseModal }
         setDisplayJobs(true);
     }
 
-    const LocationButton = ({ name, color }) => {
+    const LocationButton = ({ name, color, img }) => {
         return (
             <div onClick={() => handleLocationClick(name)} style={{background: `${color}`}} className={styles["location-button"]}>
-                <img className={styles["location-image"]} src="items/food/coffee.png" />
+                <img className={styles["location-image"]} src={img} />
                 <span>{name}</span>
             </div>
         );
@@ -122,7 +122,7 @@ const WorkModal = ({ addSystemMessage, gameData, setGameData, handleCloseModal }
         <button className={styles.exit} onClick={handleCloseModal}><img src="exit-icon.svg" /></button>
         <div className={styles["inner-window"]}>
             <div className={styles["character-section"]}>
-                <img className={styles["character-image"]} src="characters/mall-npc.png" />
+                <img className={styles["character-image"]} src="characters/employment-agency-npc.png" />
                 <div style={{ maxHeight: "100%", overflow: "hidden" }}>
                     <ModalMessageBox modalMessageList={messageList} />
                 </div>
@@ -133,12 +133,12 @@ const WorkModal = ({ addSystemMessage, gameData, setGameData, handleCloseModal }
                     <>
                         <h3 style={{ fontSize: "16px", margin: "0", background: "#2b2a33" }}>Locations</h3>
                         <div className={styles["location-list"]}>
-                            <LocationButton name="Cafe" color="rgba(86, 61, 5, 0.638)" />
-                            <LocationButton name="Mall" color="rgba(109, 214, 255, 0.638)"/>
-                            <LocationButton name="Hospital" color="rgba(255, 0, 0, 0.638)" />
-                            <LocationButton name="Gas Station" color="rgba(27, 255, 91, 0.638)"/>
-                            <LocationButton name="Campus" color="rgba(232, 255, 86, 0.638)" />
-                            <LocationButton name="Gym" color="rgba(255, 94, 225, 0.638)" />
+                            <LocationButton name="Cafe" color="rgba(86, 61, 5, 0.638)" img="items/food/coffee.png" />
+                            <LocationButton name="Mall" color="rgba(109, 214, 255, 0.638)" img="icons/locations/mall.png"/>
+                            <LocationButton name="Hospital" color="rgba(255, 0, 0, 0.638)" img="icons/locations/hospital.png" />
+                            <LocationButton name="Gas Station" color="rgba(27, 255, 91, 0.638)" img="icons/locations/gas-station.png"/>
+                            <LocationButton name="Campus" color="rgba(232, 255, 86, 0.638)" img="icons/locations/campus.png" />
+                            <LocationButton name="Gym" color="rgba(255, 94, 225, 0.638)" img="icons/locations/gym.png" />
                         </div>
                     </>
                 }

@@ -9,8 +9,9 @@ import CafeModal from './LocationModals/CafeModal/CafeModal';
 import MallModal from './LocationModals/MallModal/MallModal';
 import HospitalModal from './LocationModals/HospitalModal/HospitalModal';
 import CampusModal from './LocationModals/CampusModal/CampusModal';
+import ToolTip from '../../shared-components/ToolTip/ToolTip';
 
-const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage, gameData, setGameData, setCurrentDayData, handleNextDayClick}) => {
+const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage, gameData, setGameData, setCurrentDayData, handleNextDayClick }) => {
     const [currentModal, setCurrentModal] = useState();
     const [desiredLocation, setDesiredLocation] = useState();
     const [distanceCost, setDistanceCost] = useState(0);
@@ -34,13 +35,13 @@ const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage,
         handleNextDayClick();
     }
 
-    useEffect(() => {console.log("reward dropping updated: ", rewardDropping)}, [rewardDropping])
+    useEffect(() => { console.log("reward dropping updated: ", rewardDropping) }, [rewardDropping])
 
     const EnergyOutModal = () => {
-        return(
+        return (
             <div className={styles.modal}>
                 <h1>Energy Out!</h1>
-                <p style={{width: "80%", margin: "20px auto"}}>You ran out of energy. You headed home to sleep for the night and wake up the next morning.</p>
+                <p style={{ width: "80%", margin: "20px auto" }}>You ran out of energy. You headed home to sleep for the night and wake up the next morning.</p>
                 <button onClick={handleCloseModal}>Continue</button>
             </div>
         )
@@ -49,16 +50,16 @@ const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage,
 
     const handleLocationClick = (e) => {
         console.log("Location Click: ", e.target.value)
-        setDesiredLocation(e.target.value);
+        setDesiredLocation(e.currentTarget.value);
         // Finds distance from current location to desired location
-        const distance = Math.sqrt(Math.pow(locationCoords[e.target.value][0] - locationCoords[gameData.location][0], 2) + Math.pow(locationCoords[e.target.value][1] - locationCoords[gameData.location][1], 2));
+        const distance = Math.sqrt(Math.pow(locationCoords[e.currentTarget.value][0] - locationCoords[gameData.location][0], 2) + Math.pow(locationCoords[e.currentTarget.value][1] - locationCoords[gameData.location][1], 2));
         // Finds energy cost using that distance
         const energyCost = Math.floor(distance / 30);
         setDistanceCost(energyCost);
-        if (e.target.value != gameData.location) {
-            setNewLocation(e.target.value, energyCost)
+        if (e.currentTarget.value != gameData.location) {
+            setNewLocation(e.currentTarget.value, energyCost)
         } else {
-            setCurrentModal(e.target.value)
+            setCurrentModal(e.currentTarget.value)
         }
     }
 
@@ -99,13 +100,13 @@ const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage,
     }
 
     const RewardCrate = () => {
- 
+
         useEffect(() => {
             setTimeout(() => setRewardDropping(false), 2100);
         })
 
         return (
-            <div style={{"--random-position-x": `${randomPos[0]}px`,  "--random-position-y": `${randomPos[1]}px`}} onClick={() => handleRewardClicked()} className={classNames(styles["reward-crate"], rewardDropping ? styles["dropping"]: styles["not"])}><img src="crate.png"/></div>
+            <div style={{ "--random-position-x": `${randomPos[0]}px`, "--random-position-y": `${randomPos[1]}px` }} onClick={() => handleRewardClicked()} className={classNames(styles["reward-crate"], rewardDropping ? styles["dropping"] : styles["not"])}><img src="crate.png" /></div>
         )
     }
 
@@ -115,15 +116,33 @@ const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage,
         <div className={styles["location-holder"]}>
             <div className={styles.player} style={{ left: `${locationCoords[gameData.location][0]}px`, top: `${locationCoords[gameData.location][1]}px` }}><img src="character.png" /></div>
             {/* Location Buttons */}
-            <button onClick={handleLocationClick} value="Food" className={classNames(styles["location-button"], styles["food"])}>Food</button>
-            <button onClick={handleLocationClick} value="Staffing Agency" className={classNames(styles["location-button"], styles["staffing-agency"])}>Staffing Agency</button>
-            <button onClick={handleLocationClick} value="Home" className={classNames(styles["location-button"], styles["home"])}>Home</button>
-            <button onClick={handleLocationClick} value="Mall" className={classNames(styles["location-button"], styles["mall"])}>Mall</button>
-            <button onClick={handleLocationClick} value="Campus" className={classNames(styles["location-button"], styles["campus"])}>Campus</button>
-            <button onClick={handleLocationClick} value="Gym" className={classNames(styles["location-button"], styles["gym"])}>Gym</button>
-            <button onClick={handleLocationClick} value="Hospital" className={classNames(styles["location-button"], styles["hospital"])}>Hospital</button>
-            <button onClick={handleLocationClick} value="Gas Station" className={classNames(styles["location-button"], styles["gas-station"])}>Gas Station</button>
-            <button onClick={handleLocationClick} value="Cafe" className={classNames(styles["location-button"], styles["cafe"])}>Cafe</button>
+            <ToolTip text="Food" coords={[305, 250]}>
+                <button onClick={handleLocationClick} value="Food" className={classNames(styles["location-button"], styles["food"])}><img className={styles["location-icon"]} src="items/food/burger.png" /></button>
+            </ToolTip>
+            <ToolTip text="Staffing Agency" coords={[255, 170]}>
+                <button onClick={handleLocationClick} value="Staffing Agency" className={classNames(styles["location-button"], styles["staffing-agency"])}><img className={styles["location-icon"]} src="icons/locations/staffing-agency.png" /></button>
+            </ToolTip>
+            <ToolTip text="Home" coords={[285, 450]}>
+                <button onClick={handleLocationClick} value="Home" className={classNames(styles["location-button"], styles["home"])}><img className={styles["location-icon"]} src="icons/locations/home.png" /></button>
+            </ToolTip>
+            <ToolTip text="Mall" coords={[585, 170]}>
+                <button onClick={handleLocationClick} value="Mall" className={classNames(styles["location-button"], styles["mall"])}><img className={styles["location-icon"]} src="icons/locations/mall.png" /></button>
+            </ToolTip>
+            <ToolTip text="Campus" coords={[495, 100]}>
+                <button onClick={handleLocationClick} value="Campus" className={classNames(styles["location-button"], styles["campus"])}><img className={styles["location-icon"]} src="icons/locations/campus.png" /></button>
+            </ToolTip>
+            <ToolTip text="Gym" coords={[225, 310]}>
+                <button onClick={handleLocationClick} value="Gym" className={classNames(styles["location-button"], styles["gym"])}><img className={styles["location-icon"]} src="icons/locations/gym.png" /></button>
+            </ToolTip>
+            <ToolTip text="Hospital" coords={[595, 290]}>
+                <button onClick={handleLocationClick} value="Hospital" className={classNames(styles["location-button"], styles["hospital"])}><img className={styles["location-icon"]} src="icons/locations/hospital.png" /></button>
+            </ToolTip>
+            <ToolTip text="Gas Station" coords={[412, 80]}>
+                <button onClick={handleLocationClick} value="Gas Station" className={classNames(styles["location-button"], styles["gas-station"])}><img className={styles["location-icon"]} src="icons/locations/gas-station.png" /></button>
+            </ToolTip>
+            <ToolTip text="Cafe" coords={[185, 210]}>
+                <button onClick={handleLocationClick} value="Cafe" className={classNames(styles["location-button"], styles["cafe"])}><img className={styles["location-icon"]} src="items/food/coffee.png" /></button>
+            </ToolTip>
             {/* Modals */}
             {currentModal == "Food" && <FoodModal gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
             {currentModal == "Cafe" && <CafeModal handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}

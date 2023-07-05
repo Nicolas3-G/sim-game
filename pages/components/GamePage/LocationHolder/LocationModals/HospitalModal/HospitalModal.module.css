@@ -17,7 +17,7 @@
         z-index: 4;
         position: absolute;
         background: #2b2a33;
-        background-image: url(/backgrounds/mall-bg-2.png);
+        background-image: url(/backgrounds/hospital-bg.png);
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -54,14 +54,14 @@
     background: #2b2a33;
     color: rgba(255, 255, 255, 0.334);
     display: flex;
-    height: 40px;
+    height: 50px;
     align-items: center;
     padding: 5px;
 }
 
 .selection-option img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
 }
 

@@ -17,18 +17,18 @@ const MallModal = ({ handleWorkEnergyOut, gameData, setGameData, setCurrentDayDa
 
     const mallItems = [
         {
-            name: "Cheap Suit",
+            name: "Interview Clothes",
             cost: 120,
             happiness: 5,
             health: 2,
-            img: "items/food/coffee.png",
+            img: "items/mall/interview-clothes.png",
         },
         {
-            name: "Nice Suit",
+            name: "Nice Clothes",
             cost: 320,
             happiness: 2,
             health: 0,
-            img: "items/food/coffee.png",
+            img: "items/mall/nice-clothes.png",
         }
     ]
 

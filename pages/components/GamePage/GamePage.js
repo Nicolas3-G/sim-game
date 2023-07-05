@@ -9,7 +9,7 @@ const GamePage = ({ gameDataObject, resetGameData }) => {
     const [gameData, setGameData] = useState(gameDataObject.current);
     const [dropRewardCrate, setDropRewardCrate] = useState(false);
     const [prevGameData, setPrevGameData] = useState(gameDataObject.current);
-    const [systemMessageList, setSystemMessageList] = useState(["Hey heard you were back in town!", "Remember rent is due each week! You'll need $300", "If you need a job, ask around town"])
+    const [systemMessageList, setSystemMessageList] = useState(["Hey heard you were back in town!", "Remember rent is due each week! You'll need $400", "If you need a job, ask around town"])
 
     const addSystemMessage = (messageText) => {
         setSystemMessageList((prev) => {
@@ -140,8 +140,8 @@ const GamePage = ({ gameDataObject, resetGameData }) => {
 
         // Removes rent every 7 days
         if (updatedGameData.day % 7 == 0) {
-            updatedGameData.money -= 500;
-            addSystemMessage("You paid rent! $500 deducted.")
+            updatedGameData.money -= 400;
+            addSystemMessage("You paid rent! $400 deducted.")
         }
 
         if (updatedGameData.happiness <= 20) {
@@ -159,6 +159,11 @@ const GamePage = ({ gameDataObject, resetGameData }) => {
             }
         } else {
             setCurrentDayData({ eaten: false });
+        }
+
+        // Warns that rent is due tomorrow
+        if (updatedGameData.day % 6 == 0) {
+            addSystemMessage("Rent is due tomorrow! Make sure you can pay!")
         }
 
         setGameData(updatedGameData);

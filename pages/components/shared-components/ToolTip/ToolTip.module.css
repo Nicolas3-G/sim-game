@@ -18,6 +18,10 @@
     transform: translateX(-50%);
     white-space: nowrap;
   }
+
+  .location-tool-tip {
+    background-color: rgba(255, 255, 255, 0.501);
+  }
   
   .tool-tip:hover .tool-tip-text {
     visibility: visible;

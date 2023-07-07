@@ -4,6 +4,7 @@ import LocationHolder from './LocationHolder/LocationHolder';
 import classNames from 'classnames';
 import ToolTip from '../shared-components/ToolTip/ToolTip';
 import MessageFeed from './MessageFeed/MessageFeed';
+import InventoryMenu from './InventoryMenu/InventoryMenu';
 
 const GamePage = ({ gameDataObject, resetGameData }) => {
     const [gameData, setGameData] = useState(gameDataObject.current);
@@ -136,6 +137,7 @@ const GamePage = ({ gameDataObject, resetGameData }) => {
         updatedGameData.day++;
         // Resets energy to 100 each day
         updatedGameData.energy = 100;
+        updatedGameData.endurance = 2;
         updatedGameData.location = "Home";
 
         // Removes rent every 7 days
@@ -159,6 +161,11 @@ const GamePage = ({ gameDataObject, resetGameData }) => {
             }
         } else {
             setCurrentDayData({ eaten: false });
+        }
+        
+        // If user had day pay to gym, remove it
+        if (gameData["gym membership"] == "Day") {
+            updatedGameData["gym membership"] = false;
         }
 
         // Warns that rent is due tomorrow
@@ -185,6 +192,7 @@ const GamePage = ({ gameDataObject, resetGameData }) => {
                     <p>Days Survived: {gameData.day}</p>
                     <button onClick={resetGameData}>Restart</button>
                 </div>}
+            <InventoryMenu />
         </div>
     );
 }

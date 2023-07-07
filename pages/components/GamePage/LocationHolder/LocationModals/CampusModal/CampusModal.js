@@ -4,7 +4,7 @@ import { useState } from "react";
 import WorkMenu from "@/pages/components/shared-components/WorkMenu/WorkMenu";
 import CourseComponent from "./components/CourseComponent/CourseComponent";
 
-const CampusModal = ({ handleWorkEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
+const CampusModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
     const [messageList, setMessageList] = useState(["Hi! Welcome to the campus, need help finding anything?"])
 
 
@@ -34,13 +34,13 @@ const CampusModal = ({ handleWorkEnergyOut, gameData, setGameData, setCurrentDay
                         <h3 style={{fontSize: "18px", margin: "0"}}>Base Education</h3>
                         {/* Each course component takes a baseEducation, where it starts counting to detemine which bubbles are filled,
                         it should be set to what the users final education would be after the previous course is completed */}
-                        <CourseComponent courseName="Grade School" baseEducation={0} endEducation={10} gameData={gameData} setGameData={setGameData} />
-                        <CourseComponent courseName="Junior High" baseEducation={10} endEducation={25} gameData={gameData} setGameData={setGameData}/>
-                        <CourseComponent courseName="High School" baseEducation={25} endEducation={50} gameData={gameData} setGameData={setGameData} />
+                        <CourseComponent handleEnergyOut={handleEnergyOut} courseName="Grade School" baseEducation={0} endEducation={10} gameData={gameData} setGameData={setGameData} />
+                        <CourseComponent handleEnergyOut={handleEnergyOut} courseName="Junior High" baseEducation={10} endEducation={25} gameData={gameData} setGameData={setGameData}/>
+                        <CourseComponent handleEnergyOut={handleEnergyOut} courseName="High School" baseEducation={25} endEducation={50} gameData={gameData} setGameData={setGameData} />
                     </div>
                 </div>
                 {/* Checks if player has job, then if the job is at this location */}
-                {gameData.job && gameData.job.location == gameData.location && <WorkMenu handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} addModalMessage={addModalMessage} />}
+                {gameData.job && gameData.job.location == gameData.location && <WorkMenu handleEnergyOut={handleEnergyOut} gameData={gameData} setGameData={setGameData} addModalMessage={addModalMessage} />}
             </div>
 
         </div>

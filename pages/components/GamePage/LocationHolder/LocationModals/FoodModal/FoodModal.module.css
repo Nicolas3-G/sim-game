@@ -35,9 +35,7 @@
 }
 
 .selection-window {
-    background-color: #2d2c2f91;
-    height: 75%;
-    width: 85%;
+    width: 100%;
     margin: 0px auto;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -47,8 +45,8 @@
     border: 2px solid #171718;
     background: #2b2a33;
     color: rgba(255, 255, 255, 0.334);
-    height: 20%;
     display: flex;
+    height: 40px;
     align-items: center;
     padding: 5px;
 }
@@ -59,7 +57,13 @@
     margin-right: 10px;
 }
 
-.selection-option:hover {
-    
+.selection-option:hover { 
     color: white;
+}
+
+.info-pop-up {
+    margin-left: 30px;
+    position: relative;
+    width: 10px;
+    height: 10px;
 }

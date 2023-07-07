@@ -1,6 +1,6 @@
 import styles from "./WorkMenu.module.css"
 
-const WorkMenu = ({ gameData, setGameData, addModalMessage, handleWorkEnergyOut }) => {
+const WorkMenu = ({ gameData, setGameData, addModalMessage, handleEnergyOut }) => {
 
     const handleWorkClick = () => {
         console.log("Work click...", gameData.job.name);
@@ -14,7 +14,7 @@ const WorkMenu = ({ gameData, setGameData, addModalMessage, handleWorkEnergyOut 
             setGameData(updatedGameData);
             addModalMessage("Great work!");
         } else {
-            handleWorkEnergyOut();
+            handleEnergyOut();
         }
     }
 

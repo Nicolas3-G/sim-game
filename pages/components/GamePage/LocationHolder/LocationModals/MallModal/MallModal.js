@@ -3,7 +3,7 @@ import styles from "./MallModal.module.css"
 import { useState } from "react";
 import WorkMenu from "@/pages/components/shared-components/WorkMenu/WorkMenu";
 
-const MallModal = ({ handleWorkEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
+const MallModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
     const [messageList, setMessageList] = useState(["Welcome to the mall! Please behave yourself!"])
     
 
@@ -66,7 +66,7 @@ const MallModal = ({ handleWorkEnergyOut, gameData, setGameData, setCurrentDayDa
                     ))}
                 </div>
                 {/* Checks if player has job, then if the job is at this location */}
-                {gameData.job && gameData.job.location == gameData.location && <WorkMenu handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} addModalMessage={addModalMessage} /> }
+                {gameData.job && gameData.job.location == gameData.location && <WorkMenu handleEnergyOut={handleEnergyOut} gameData={gameData} setGameData={setGameData} addModalMessage={addModalMessage} /> }
             </div>
 
         </div>

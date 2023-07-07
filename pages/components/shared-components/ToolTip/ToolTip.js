@@ -1,9 +1,6 @@
 import styles from "./ToolTip.module.css";
 
 const ToolTip = ({ text, coords, children }) => {
-
-  console.log()
-
   return (
     <div className={styles["tool-tip"]}>
       {children}

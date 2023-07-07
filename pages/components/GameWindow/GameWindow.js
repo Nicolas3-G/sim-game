@@ -26,6 +26,8 @@ const GameWindow = () => {
             health: 100,
             happiness: 50,
             education: 0,
+            strength: 0,
+            endurance: 2,
             inventory: [],
             experience: 0,
             money: 50,
@@ -33,6 +35,7 @@ const GameWindow = () => {
             day: 1,
             job: null,
             died: false,
+            "gym membership": false,
         }
     }
 

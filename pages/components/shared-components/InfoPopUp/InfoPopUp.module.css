@@ -1,0 +1,43 @@
+.info-icon {
+    width: fit-content;
+    height: fit-content;
+    /* background: #eb9b05; */
+    background-color: transparent;
+    position: absolute;
+    border-radius: 2px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    place-items: center;
+}
+
+.info-icon:hover {
+    z-index: 6;
+}
+
+.pop-up {
+    background-color: grey;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.place-holder {
+    max-width: 11px;
+    max-height: 11px;
+    margin: 2px !important;
+}
+
+.stat-icon {
+    max-width: 15px;
+    max-height: 15px;
+    position: relative;
+}
+
+.stat-holder {
+    display: flex;
+    position: relative;
+}

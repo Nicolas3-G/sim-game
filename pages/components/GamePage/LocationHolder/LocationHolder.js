@@ -10,6 +10,8 @@ import MallModal from './LocationModals/MallModal/MallModal';
 import HospitalModal from './LocationModals/HospitalModal/HospitalModal';
 import CampusModal from './LocationModals/CampusModal/CampusModal';
 import ToolTip from '../../shared-components/ToolTip/ToolTip';
+import GymModal from './LocationModals/GymModal/GymModal';
+import GasStationModal from './LocationModals/GasStationModal/GasStationModal';
 
 const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage, gameData, setGameData, setCurrentDayData, handleNextDayClick }) => {
     const [currentModal, setCurrentModal] = useState();
@@ -30,7 +32,26 @@ const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage,
         "Gym": [240, 260],
     }
 
-    const handleWorkEnergyOut = () => {
+    const incrementStat = (increment, statName) => {
+        if (statName == "health" || statName == "happiness") {
+            if ((gameData[statName] + increment) > 100) {
+                return 100;
+            } else {
+                return gameData[statName] + increment;
+            }
+        }
+        if (statName == "energy") {
+            if ((gameData[statName] + increment) > 100) {
+                return 100;
+            } else if ((gameData[statName] + increment) <= 0) {
+                return handleEnergyOut();
+            } else {
+                return gameData[statName] + increment;
+            }
+        }
+    }
+
+    const handleEnergyOut = () => {
         setCurrentModal("energyOut");
         handleNextDayClick();
     }
@@ -145,11 +166,13 @@ const LocationHolder = ({ dropRewardCrate, setDropRewardCrate, addSystemMessage,
             </ToolTip>
             {/* Modals */}
             {currentModal == "Food" && <FoodModal gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
-            {currentModal == "Cafe" && <CafeModal handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
-            {currentModal == "Mall" && <MallModal handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
-            {currentModal == "Hospital" && <HospitalModal handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
-            {currentModal == "Campus" && <CampusModal handleWorkEnergyOut={handleWorkEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
+            {currentModal == "Cafe" && <CafeModal handleEnergyOut={handleEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
+            {currentModal == "Gas Station" && <GasStationModal handleEnergyOut={handleEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
+            {currentModal == "Mall" && <MallModal handleEnergyOut={handleEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
+            {currentModal == "Hospital" && <HospitalModal handleWorkEnergyOut={handleEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
+            {currentModal == "Campus" && <CampusModal handleEnergyOut={handleEnergyOut} gameData={gameData} setGameData={setGameData} setCurrentDayData={setCurrentDayData} handleCloseModal={handleCloseModal} />}
             {currentModal == "Staffing Agency" && <JobModal addSystemMessage={addSystemMessage} gameData={gameData} setGameData={setGameData} handleCloseModal={handleCloseModal} />}
+            {currentModal == "Gym" && <GymModal handleEnergyOut={handleEnergyOut} incrementStat={incrementStat} addSystemMessage={addSystemMessage} gameData={gameData} setGameData={setGameData} handleCloseModal={handleCloseModal} />}
             {currentModal == "Home" && <HomeModal handleNextDayClick={handleNextDayClick} handleCloseModal={handleCloseModal} />}
             {currentModal == "energyOut" && <EnergyOutModal />}
             {currentModal == "travel" && <TravelModal desiredLocation={desiredLocation} setNewLocation={setNewLocation} handleCloseModal={handleCloseModal} />}

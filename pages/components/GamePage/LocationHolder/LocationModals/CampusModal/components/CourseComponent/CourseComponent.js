@@ -1,10 +1,7 @@
-import { useState } from "react";
 import styles from "./CourseComponent.module.css";
 import classNames from "classnames";
 
-const CourseComponent = ({ courseName, endEducation, gameData, setGameData, baseEducation }) => {
-    const [completedBubbles, setCompletedBubbles] = useState(0);
-
+const CourseComponent = ({ handleEnergyOut, courseName, endEducation, gameData, setGameData, baseEducation }) => {
     let maxBubbleCount = endEducation;
 
     const completed = gameData.education >= maxBubbleCount;
@@ -28,6 +25,8 @@ const CourseComponent = ({ courseName, endEducation, gameData, setGameData, base
                 updatedGameData.education += 1;
                 updatedGameData.energy -= 12;
                 setGameData(updatedGameData);
+            } else {
+                handleEnergyOut();
             }
 
         }

@@ -13,8 +13,12 @@ const StartPage = ({ setGameStarted }) => {
     return (
         <div className={styles.page}>
             <div className={styles.holder}>
-                <h1 className={styles.title}>Applicant.io</h1>
-                <p className={styles.info}>(Playable Alpha Verison)</p>
+                <div className={styles["title-holder"]}>
+                    {/* <h1 className={styles.title}>Applicant.io</h1> */}
+                    <img src="metal-header-2.png" className={styles["metal-header-2"]}/>
+                    <p className={styles.infotwo}>(Playable Alpha Verison)</p>
+                </div>
+
                 <div className={styles["button-holder"]}>
                     <MenuButton title="Start" buttonAction={() => setGameStarted(true)} />
                     <MenuButton style={"yellow"} title="Settings" buttonAction={() => setGameStarted(true)} />

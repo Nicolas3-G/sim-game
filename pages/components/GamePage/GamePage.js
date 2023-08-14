@@ -84,7 +84,7 @@ const GamePage = ({ gameDataObject, resetGameData }) => {
         }, 1000);
         setTimeout(() => { setPrevGameData(gameData) }, 1200);
 
-    }, [gameData]);
+    }, [gameData, prevGameData]);
 
     const StatusBar = () => {
         return (

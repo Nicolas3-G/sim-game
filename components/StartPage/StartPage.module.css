@@ -1,10 +1,16 @@
-.start-button {
-    background-color: green;
-    width: 50px;
-    height: 30px;
+.button {
+    background-color: #479f47;
+    width: 150px;
+    height: 50px;
     border-radius: 10px;
     border: none;
     margin-top: 20px;
+    font-size: 32px;
+    box-shadow: -2px 1px 10px 2px rgba(0, 0, 0, 0.75);
+}
+
+.button.settings {
+    background-color: #f3f35e;
 }
 
 .holder {
@@ -22,3 +28,68 @@
     height: 100%;
     background-image: url(/background.png);
 }
+
+.title {
+    margin: 0;
+    font-size: 62px;
+    margin-top: 20%;
+}
+
+.info {
+    color: white;
+    margin-top: 0px;
+}
+
+.verison {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    color: white;
+}
+
+.button-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
+    height: 130px;
+}
+
+.pushable {
+    background: #216121;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    width: 150px;
+    cursor: pointer;
+    outline-offset: 4px;
+}
+
+.front {
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    background: #479f47;
+    color: black;
+    transition: transform .3s ease-in-out;
+    transform: translateY(-6px);
+}
+
+.front.yellow {
+    background: #f3f35e;
+}
+
+.pushable.yellow {
+    background: #858520;
+}
+
+.pushable:hover .front {
+    transform: translateY(-8px);
+  }
+
+.pushable:active .front {
+    transition: transform .1s ease-in-out;
+    transform: translateY(-2px);
+  }

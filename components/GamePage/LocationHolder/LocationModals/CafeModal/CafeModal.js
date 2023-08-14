@@ -1,11 +1,11 @@
-import ModalMessageBox from "@/pages/components/shared-components/ModalMessageBox/ModalMessageBox";
-import styles from "./GasStationModal.module.css"
+import ModalMessageBox from "@/components/shared-components/ModalMessageBox/ModalMessageBox";
+import styles from "./CafeModal.module.css"
 import { useState } from "react";
-import WorkMenu from "@/pages/components/shared-components/WorkMenu/WorkMenu";
-import InfoPopUp from "@/pages/components/shared-components/InfoPopUp/InfoPopUp";
+import WorkMenu from "@/components/shared-components/WorkMenu/WorkMenu";
+import InfoPopUp from "@/components/shared-components/InfoPopUp/InfoPopUp";
 
-const GasStationModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
-    const [messageList, setMessageList] = useState(["What can I get ya?"])
+const CafeModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
+    const [messageList, setMessageList] = useState(["Welcome to my shop"])
 
 
     const addModalMessage = (message) => {
@@ -18,21 +18,38 @@ const GasStationModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDay
 
     const foodItems = [
         {
-            name: "Bad Coffee",
-            cost: 10,
-            happiness: -1,
+            name: "Coffee",
+            cost: 20,
+            happiness: 1,
             health: -2,
-            energy: 0,
+            energy: 1,
             img: "items/food/coffee.png",
         },
         {
-            name: "Candy",
-            cost: 20,
-            happiness: 2,
-            health: -2,
-            energy: -2,
+            name: "Espresso",
+            cost: 50,
+            happiness: 1,
+            health: -10,
+            energy: 5,
             img: "items/food/espresso.png"
         },
+        {
+            name: "Egg Sandwich",
+            cost: 15,
+            happiness: 3,
+            health: -2,
+            energy: 0,
+            img: "items/food/breakfast-sandwich.png"
+        },
+        {
+            name: "Salad",
+            cost: 20,
+            happiness: -3,
+            health: +4,
+            energy: 0,
+            img: "items/food/salad.png"
+        },
+
     ]
 
 
@@ -62,11 +79,11 @@ const GasStationModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDay
 
     return (
         <div className={styles["food-modal"]}>
-            <h2 className={styles["food-modal-title"]}>Gas Station</h2>
+            <h2 className={styles["food-modal-title"]}>Cafe</h2>
             <button className={styles.exit} onClick={handleCloseModal}><img src="exit-icon.svg" /></button>
             <div className={styles["inner-window"]}>
                 <div className={styles["character-section"]}>
-                    <img className={styles["character-image"]} src="characters/gas-station-npc.png" />
+                    <img className={styles["character-image"]} src="characters/cafe-npc.png" />
                     <div style={{ maxHeight: "100%", overflow: "hidden" }}>
                         <ModalMessageBox modalMessageList={messageList} />
                     </div>
@@ -90,4 +107,4 @@ const GasStationModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDay
     )
 };
 
-export default GasStationModal;
+export default CafeModal;

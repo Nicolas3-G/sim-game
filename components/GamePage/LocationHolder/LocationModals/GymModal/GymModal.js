@@ -1,7 +1,7 @@
-import ToolTip from "@/pages/components/shared-components/ToolTip/ToolTip";
+import ToolTip from "@/components/shared-components/ToolTip/ToolTip";
 import styles from "./GymModal.module.css";
 import { useEffect, useState } from "react";
-import ModalMessageBox from "@/pages/components/shared-components/ModalMessageBox/ModalMessageBox";
+import ModalMessageBox from "@/components/shared-components/ModalMessageBox/ModalMessageBox";
 import classNames from "classnames";
 
 const GymModal = ({ handleEnergyOut, incrementStat, addSystemMessage, gameData, setGameData, handleCloseModal }) => {

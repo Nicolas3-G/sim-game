@@ -1,8 +1,8 @@
-import ModalMessageBox from "@/pages/components/shared-components/ModalMessageBox/ModalMessageBox";
+import ModalMessageBox from "@/components/shared-components/ModalMessageBox/ModalMessageBox";
 import styles from "./CampusModal.module.css"
 import { useState } from "react";
-import WorkMenu from "@/pages/components/shared-components/WorkMenu/WorkMenu";
-import CourseComponent from "./components/CourseComponent/CourseComponent";
+import WorkMenu from "@/components/shared-components/WorkMenu/WorkMenu";
+import CourseComponent from "./components/CourseComponent";
 
 const CampusModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
     const [messageList, setMessageList] = useState(["Hi! Welcome to the campus, need help finding anything?"])

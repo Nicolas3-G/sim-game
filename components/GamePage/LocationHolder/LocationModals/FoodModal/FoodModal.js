@@ -1,4 +1,4 @@
-import InfoPopUp from "@/pages/components/shared-components/InfoPopUp/InfoPopUp";
+import InfoPopUp from "@/components/shared-components/InfoPopUp/InfoPopUp";
 import styles from "./FoodModal.module.css"
 
 const FoodModal = ({ gameData, setGameData, setCurrentDayData, handleCloseModal }) => {

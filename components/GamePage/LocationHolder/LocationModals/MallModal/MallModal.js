@@ -1,7 +1,7 @@
-import ModalMessageBox from "@/pages/components/shared-components/ModalMessageBox/ModalMessageBox";
+import ModalMessageBox from "@/components/shared-components/ModalMessageBox/ModalMessageBox";
 import styles from "./MallModal.module.css"
 import { useState } from "react";
-import WorkMenu from "@/pages/components/shared-components/WorkMenu/WorkMenu";
+import WorkMenu from "@/components/shared-components/WorkMenu/WorkMenu";
 
 const MallModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
     const [messageList, setMessageList] = useState(["Welcome to the mall! Please behave yourself!"])

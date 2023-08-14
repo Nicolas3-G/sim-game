@@ -1,8 +1,8 @@
-import ToolTip from "@/pages/components/shared-components/ToolTip/ToolTip";
+import ToolTip from "@/components/shared-components/ToolTip/ToolTip";
 import styles from "./JobModal.module.css";
 import { useState } from "react";
 import { mallJobs, cafeJobs, gymJobs, campusJobs, hospitalJobs, gasStationJobs } from "./Jobs"
-import ModalMessageBox from "@/pages/components/shared-components/ModalMessageBox/ModalMessageBox";
+import ModalMessageBox from "@/components/shared-components/ModalMessageBox/ModalMessageBox";
 
 const WorkModal = ({ addSystemMessage, gameData, setGameData, handleCloseModal }) => {
     const [displayJobs, setDisplayJobs] = useState(false);

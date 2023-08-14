@@ -1,8 +1,8 @@
-import ModalMessageBox from "@/pages/components/shared-components/ModalMessageBox/ModalMessageBox";
+import ModalMessageBox from "@/components/shared-components/ModalMessageBox/ModalMessageBox";
 import styles from "./HospitalModal.module.css"
 import { useState } from "react";
-import WorkMenu from "@/pages/components/shared-components/WorkMenu/WorkMenu";
-import InfoPopUp from "@/pages/components/shared-components/InfoPopUp/InfoPopUp";
+import WorkMenu from "@/components/shared-components/WorkMenu/WorkMenu";
+import InfoPopUp from "@/components/shared-components/InfoPopUp/InfoPopUp";
 
 const HospitalModal = ({ handleEnergyOut, gameData, setGameData, setCurrentDayData, handleCloseModal }) => {
     const [messageList, setMessageList] = useState(["Hello how can I help you today? Are you hurt?"])
